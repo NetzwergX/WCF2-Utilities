@@ -1,15 +1,3 @@
-WCF Utilities
-===============================
-
-This is a collection of usefull classes for developing WCF plugins & applications, that are not shipped with the official WCF distribution.
-This package is  WCF package itself with no other dependencies.
-
-this package is designed FOR DEVLOPERS ONLY. It has not benefit for end users. DO NOT INSTALL. If a plugin requires this, it has to ship
-this package within itself.
-
-License
--------
-
 Copyright (c) 2012 Sebastian Teumert (teumert.net)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
