@@ -14,26 +14,16 @@ use wcf\system\event\IEventListener;
 * @category   Community Framework Utilities
 */
 abstract class AbstractEventlistener implements IEventListener {
-	
-	/**
-	 * Restrict usage on specific events
-	 */
-	protected $allowedEvents = array();
-	
-	/**
-	 * Restrict usage on specific classes
-	 */
-	protected $allowedClasses = array();
 
 	/**
-	* @see wcf\system\event\IEventListener::execute()
-	*/
+	 * Forwards events to on<$eventName>() method.
+	 * 
+	 * @see wcf\system\event\IEventListener::execute()
+	 */
 	public function execute($eventObj, $className, $eventName) {
-		if((empty($this->allowedClasses) || in_array($className, $this->allowedClasses)) && 
-			(empty($this->allowedEvents) || in_array($eventName, $this->allowedEvents))) {
-			$method = 'on'.StringUtil::firstCharToUpperCase($eventName);
+		$method = 'on'.StringUtil::firstCharToUpperCase($eventName);
+		//if (method_exists($this, $$method)) 
 			$this->$method($eventObj, $className);
-		}			
 	}
 }
 
