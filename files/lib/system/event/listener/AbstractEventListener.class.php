@@ -21,7 +21,7 @@ abstract class AbstractEventlistener implements IEventListener {
 	 * @see wcf\system\event\IEventListener::execute()
 	 */
 	public function execute($eventObj, $className, $eventName) {
-		$method = 'on'.StringUtil::firstCharToUpperCase($eventName);
+		$method = 'on'.ucfirst($eventName);
 		//if (method_exists($this, $$method)) 
 			$this->$method($eventObj, $className);
 	}
